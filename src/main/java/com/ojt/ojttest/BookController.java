@@ -15,11 +15,6 @@ public class BookController {
         return bookService.insertBook(bookDto);
     }
 
-    @GetMapping("/posts")
-    public ResponseEntity<?> getBookList(){
-        return bookService.getBookList();
-    }
-
     @GetMapping("/posts/{pk}")
     public ResponseEntity<?> getBook(@PathVariable("pk") int id){
         return bookService.getBook(id);
@@ -34,4 +29,12 @@ public class BookController {
     public ResponseEntity<?> deleteBook(@PathVariable("pk") int id){
         return bookService.deleteBook(id);
     }
+
+
+
+    @GetMapping("/posts")
+    public ResponseEntity<?> getBookList(){
+        return bookService.getBookList();
+    }
+
 }

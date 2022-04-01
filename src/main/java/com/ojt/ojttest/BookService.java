@@ -1,6 +1,5 @@
 package com.ojt.ojttest;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,7 +50,8 @@ public class BookService {
     public ResponseEntity<?> updateBookById(int id, BookDto book) {
 //        book.setId(id);
 //        bookRepository.save(book);
-
+        System.out.println(id);
+        System.out.println(book.getPrice());
         Optional<BookDto> bookDto = bookRepository.findById(id);
         if (bookDto.isPresent()) {
             book.setId(id);
