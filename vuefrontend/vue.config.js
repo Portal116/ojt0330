@@ -1,5 +1,6 @@
 module.exports = {
-  outputDir: "build",
+  outputDir: "../docs",
+  publicPath: "/ojt0330/",
 
   devServer: {
     port: 9000,
