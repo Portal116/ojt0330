@@ -6,7 +6,7 @@ module.exports = {
     port: 9000,
     proxy: {
       "/api": {
-        target: "https://portal116.github.io",
+        target: "https://portal116.github.io/ojt0330",
         changeOrigin: true,
         logLevel: "debug",
         secure: false,
