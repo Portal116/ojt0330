@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <v-main>
-      확인용
       <homepage/>
     </v-main>
   </v-app>
