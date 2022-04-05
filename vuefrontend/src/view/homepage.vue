@@ -30,7 +30,7 @@
             </v-data-table>
         </v-col>
     </v-row>
-    <v-dialog v-model="dialog" width="600px">
+    <v-dialog v-model="dialog" persistent width="600px">
         <v-card class="pa-2">
             <v-form ref="form">
                 <v-simple-table>
@@ -271,13 +271,13 @@ export default {
             rules: {
                 title: [
                     v => !!v || '제목은 필수 입력사항입니다.',
-                    v => v.length <= 255 || '숫자 범위를 벗어났습니다',
+                    v => !(v && v.length > 255) || '255자까지 입력가능합니다',
                 ],
                 price: [v => !!v || '가격은 필수 입력사항입니다.',
                     v => /^[0-9]+$/.test(v) || '가격은 숫자만 입력 가능합니다',
                     v => v < 2147483647 || '숫자 범위를 벗어났습니다',
                 ],
-                length: [v => v.length <= 255 || '숫자 범위를 벗어났습니다',],
+                length: [v => !(v && v.length > 255) || '255자까지 입력가능합니다',],
             },
             
         }
